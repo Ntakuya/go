@@ -35,6 +35,22 @@ services:
     networks:
       - "local"
 
+  gin:
+    container_name: gin_challenge
+    build:
+      context: ./gin-example
+      dockerfile: go.dockerfile
+    tty: true
+    restart: always
+    volumes:
+      - type: bind
+        source: ./gin-example
+        target: /go/src
+    command: |
+      reflex -r '(\.go|go\.mod)' -s go run ./main.go
+    networks:
+      - "local"
+
   go_api:
     container_name: go_api
     build:
