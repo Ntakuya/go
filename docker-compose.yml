@@ -1,31 +1,67 @@
 version: "3.9"
 
 services:
+  reverse_proxy:
+    build:
+      context: ./reverse-proxy
+      dockerfile: reverse-proxy.dockerfile
+    volumes:
+      - type: bind
+        source: ./reverse-proxy/nginx.conf
+        target: /etc/nginx/nginx.conf
+    restart: always
+    ports:
+      - "5000:80"
+    networks:
+      - "local"
+
+  dog-server:
+    image: nginx
+    container_name: dog
+    volumes:
+      - type: bind
+        source: ./dog
+        target: /usr/share/nginx/html
+    networks:
+      - "local"
+
+  cat-server:
+    image: nginx
+    container_name: cat
+    volumes:
+      - type: bind
+        source: ./cat
+        target: /usr/share/nginx/html
+    networks:
+      - "local"
+
   go_api:
     container_name: go_api
     build:
-      context: .
-      dockerfile: ./docker/go.dockerfile
+      context: ./app
+      dockerfile: go.dockerfile
     tty: true
     restart: always
+    working_dir: /go/src
     volumes:
       - type: bind
-        source: .
+        source: ./app
         target: /go/src
-    working_dir: /go/src/app
     ports:
       - "4000:4000"
     depends_on:
       - mysql
     command: sh ./start-api-server.sh
+    networks:
+      - "local"
 
   mysql:
     container_name: go_mysql
     build:
-      context: ./docker
+      context: ./db
       dockerfile: mysql.dockerfile
     volumes:
-       - go_db_data:/var/lib/mysql
+      - go_db_data:/var/lib/mysql
     restart: always
     tty: true
     ports:
@@ -36,6 +72,12 @@ services:
       MYSQL_DATABASE: develop_database
       MYSQL_USER: sample
       MYSQL_PASSWORD: password
+    networks:
+      - "local"
 
 volumes:
   go_db_data:
+
+networks:
+  local:
+    driver: "bridge"
