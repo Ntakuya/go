@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-  sample.PrinNilSlices()
+	sample.MakingSlices()
 }
