@@ -8,9 +8,9 @@ import (
 func SlicesSlice() {
 
 	board := [][]string{
-		[]string{"_", "_", "_"},
-		[]string{"_", "_", "_"},
-		[]string{"_", "_", "_"},
+		{"_", "_", "_"},
+		{"_", "_", "_"},
+		{"_", "_", "_"},
 	}
 
 	board[0][0] = "X"
