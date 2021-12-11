@@ -5,5 +5,6 @@ import (
 )
 
 func main() {
-	sample.CallRange()
+	s := &sample.Sample{}
+	s.MapLiterals()
 }
