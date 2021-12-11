@@ -3,7 +3,7 @@ package sample
 import "fmt"
 
 func MakingSlices() {
-  a := make([]int, 5)
+	a := make([]int, 5)
 	makingSlicesPrintSlice("a", a)
 
 	b := make([]int, 0, 5)
