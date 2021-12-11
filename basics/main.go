@@ -5,8 +5,5 @@ import (
 )
 
 func main() {
-  sample.CallVertex()
-  sample.CallVertexX()
-  sample.CallWithPointer()
-  sample.CallWithDefference()
+  sample.SlicesPointer()
 }
