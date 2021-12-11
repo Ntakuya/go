@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-  sample.CallSliceBounds()
+  sample.SliceLenCap()
 }
