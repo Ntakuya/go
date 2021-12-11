@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-  sample.SliceLenCap()
+  sample.PrinNilSlices()
 }
