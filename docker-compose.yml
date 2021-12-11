@@ -35,6 +35,20 @@ services:
     networks:
       - "local"
 
+  basics:
+    container_name: tutorial-basics
+    build:
+      context: ./basics
+      dockerfile: basics.dockerfile
+    tty: true
+    restart: always
+    volumes:
+      - type: bind
+        source: ./basics
+        target: /go/src/app
+    networks:
+      - "local"
+
   gin:
     container_name: gin_challenge
     build:
