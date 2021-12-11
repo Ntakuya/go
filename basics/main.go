@@ -6,5 +6,5 @@ import (
 
 func main() {
 	s := &sample.Sample{}
-	s.MutatingMaps()
+	s.FunctionValus()
 }
