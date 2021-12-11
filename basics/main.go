@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	sample.SlicesSlice()
+	sample.AppendSliceValue()
 }
