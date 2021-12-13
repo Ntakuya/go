@@ -3,7 +3,7 @@ package sample
 import "fmt"
 
 func CallTypeAssertion() {
-  var i interface{} = "hello"
+	var i interface{} = "hello"
 
 	s := i.(string)
 	fmt.Println(s)

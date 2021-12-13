@@ -2,28 +2,18 @@ package main
 
 import (
 	s "basics/sample"
+	"fmt"
 )
 
 func main() {
-	// vs := &s.Vertex{
-	// 	3, 4,
-	// }
-	// v := s.Vertex{
-	// 	3, 4,
-	// }
-	// v.Scale(10)
-	// fmt.Println(vs.Abs())
-	// fmt.Println(v.Abs())
-	// s.Scale(&v, 10)
-	// fmt.Println(s.Abs(v))
+	s.CallTypeAssertion()
 
-	// f := s.MyFloat(-math.Sqrt2)
-	// fmt.Println(f.Abs())
-
-  s.CallTypeAssertion()
-
-  s.Do(21)
+	s.Do(21)
 	s.Do("hello")
 	s.Do(true)
+
+	a := s.Person{"Arthur Dent", 42}
+	z := s.Person{"Zaphod Beeblebrox", 9001}
+	fmt.Println(a, z)
 
 }
