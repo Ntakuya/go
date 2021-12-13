@@ -10,7 +10,12 @@ func main() {
 	vs := &s.Vertex{
 		3, 4,
 	}
+  v := s.Vertex{
+    3, 4,
+  }
 	fmt.Println(vs.Abs())
+	v.Scale(10)
+  fmt.Println(v.Abs())
 	fmt.Println(s.Abs(*vs))
 
 	f := s.MyFloat(-math.Sqrt2)
