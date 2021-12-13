@@ -6,5 +6,5 @@ import (
 
 func main() {
 	s := &sample.Sample{}
-	s.FunctionValus()
+	s.FunctionClosure()
 }
