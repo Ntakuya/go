@@ -16,4 +16,7 @@ func main() {
 	z := s.Person{"Zaphod Beeblebrox", 9001}
 	fmt.Println(a, z)
 
+  if err := s.NewError(); err != nil {
+    fmt.Println(err)
+  }
 }
