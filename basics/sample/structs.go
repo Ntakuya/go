@@ -2,10 +2,6 @@ package sample
 
 import "fmt"
 
-type Vertex struct {
-	X, Y int
-}
-
 func CallVertex() {
 	v := Vertex{1, 2}
 	fmt.Println(v)
