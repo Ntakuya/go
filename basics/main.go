@@ -10,4 +10,5 @@ func main() {
     3, 4,
   }
 	fmt.Println(vs.Abs())
+  fmt.Println(s.Abs(*vs))
 }
