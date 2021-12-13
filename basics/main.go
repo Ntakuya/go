@@ -21,4 +21,9 @@ func main() {
 	// fmt.Println(f.Abs())
 
   s.CallTypeAssertion()
+
+  s.Do(21)
+	s.Do("hello")
+	s.Do(true)
+
 }
