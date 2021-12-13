@@ -1,10 +1,13 @@
 package main
 
 import (
-	"basics/sample"
+	s "basics/sample"
+	"fmt"
 )
 
 func main() {
-	s := &sample.Sample{}
-	s.FunctionClosure()
+	vs := &s.Vertex{
+    3, 4,
+  }
+	fmt.Println(vs.Abs())
 }
